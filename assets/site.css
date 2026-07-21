@@ -400,7 +400,7 @@ p:last-child { margin-bottom: 0; }
 
 /* ---------- 16. Footer ---------- */
 .site-footer { background: var(--navy); color: #b7cdde; padding-block: clamp(3.5rem,6vw,5rem) 2rem; }
-.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: clamp(2rem,4vw,3.5rem); }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1.1fr 1fr; gap: clamp(2rem,4vw,3.5rem); }
 .footer__brand .brand__name { color: #fff; }
 .footer__brand p { color: #93b0c7; max-width: 34ch; margin-top: 1rem; }
 .site-footer h4 { color: #fff; font-family: var(--sans); font-size: .82rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 1.1rem; }
@@ -464,6 +464,7 @@ p:last-child { margin-bottom: 0; }
   .split__media img { aspect-ratio: 16/10; max-height: 420px; }
   .grid--3 { grid-template-columns: repeat(2,1fr); }
   .reviews { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 620px) {
   .grid--2, .grid--3, .reviews, .steps { grid-template-columns: 1fr; }
