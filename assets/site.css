@@ -171,6 +171,27 @@ p:last-child { margin-bottom: 0; }
 .header-cta { display: inline-flex; align-items: center; gap: .75rem; }
 .nav > .btn { display: none; } /* the in-nav Book button is for the mobile slide-out only */
 
+/* nav dropdown (About > About Me / 417 Local Resources) */
+.nav__item { position: relative; }
+.nav__chev { width: 13px; height: 13px; margin-left: 2px; vertical-align: -1px; transition: transform .2s var(--ease); }
+.nav__item:hover .nav__chev, .nav__item:focus-within .nav__chev { transform: rotate(180deg); }
+.nav__dropdown {
+  position: absolute; top: 100%; left: 0; margin-top: .65rem;
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--r-sm);
+  box-shadow: var(--sh-2); padding: .45rem; min-width: 224px;
+  opacity: 0; visibility: hidden; transform: translateY(-6px); pointer-events: none;
+  transition: opacity .2s var(--ease), transform .2s var(--ease), visibility .2s;
+  z-index: 110;
+}
+.nav__item:hover .nav__dropdown, .nav__item:focus-within .nav__dropdown {
+  opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto;
+}
+.nav__dropdown a {
+  display: block; padding: .6rem .75rem; border-radius: 8px; font-size: .92rem;
+  color: var(--ink-soft); font-weight: 500;
+}
+.nav__dropdown a:hover { background: var(--tint); color: var(--brand-deep); }
+
 /* mobile nav */
 .nav-toggle {
   display: none; width: 46px; height: 46px; border: 1px solid var(--line-2);
@@ -450,6 +471,13 @@ p:last-child { margin-bottom: 0; }
   .nav.is-open { transform: none; }
   .nav__link { font-size: 1.1rem; padding: .7rem 0; width: 100%; border-bottom: 1px solid var(--line); }
   .nav__link::after { display: none; }
+  .nav__item { width: 100%; }
+  .nav__chev { display: none; }
+  .nav__dropdown {
+    position: static; opacity: 1; visibility: visible; transform: none; pointer-events: auto;
+    box-shadow: none; border: none; padding: 0; margin-top: 0; background: transparent; min-width: 0;
+  }
+  .nav__dropdown a { padding: .6rem 0 .6rem 1rem; font-size: 1rem; color: var(--muted); border-bottom: 1px solid var(--line); }
   .nav > .btn { display: inline-flex; margin-top: 1rem; width: 100%; }
   .nav-toggle { display: inline-flex; z-index: 95; }
   .header-cta .btn:not(.nav-toggle) { display: none; }
