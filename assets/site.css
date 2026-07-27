@@ -424,6 +424,9 @@ p:last-child { margin-bottom: 0; }
 .faq details[open] summary .chev { transform: rotate(180deg); background: var(--brand); color: #fff; }
 .faq__body { padding: 0 1.4rem 1.35rem; color: var(--ink-soft); }
 .faq__body p { max-width: 68ch; }
+.faq__body ul { max-width: 68ch; margin: .75rem 0 0; padding-left: 1.2em; }
+.faq__body li { margin-bottom: .4rem; }
+.faq__body li:last-child { margin-bottom: 0; }
 @media (prefers-reduced-motion: no-preference) {
   .faq details[open] .faq__body { animation: faqIn .35s var(--ease); }
   @keyframes faqIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
