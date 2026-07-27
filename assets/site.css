@@ -473,3 +473,36 @@ p:last-child { margin-bottom: 0; }
   .post-link { flex-direction: row; }
   .post-link__t { font-size: 1.02rem; }
 }
+
+/* ---------- 13. Blog: post cards (category archives) ---------- */
+.card--post { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.card--post .post-thumb { aspect-ratio: 16/10; overflow: hidden; }
+.card--post .post-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s var(--ease); }
+.card--post:hover .post-thumb img { transform: scale(1.045); }
+.card--post .card__inner { padding: clamp(1.3rem, 2vw, 1.65rem); display: flex; flex-direction: column; flex: 1; }
+.card--post .card__title { font-size: 1.18rem; margin-bottom: .5rem; }
+.card--post .card__body { color: var(--ink-soft); font-size: .96rem; flex: 1; }
+.post-meta { font-size: .82rem; color: var(--muted); font-weight: 500; margin-bottom: .65rem; display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+.post-meta .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--line-2); flex: none; }
+
+/* ---------- 14. Blog: article body (prose) ---------- */
+.post-hero { border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--sh-2); }
+.post-hero img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.prose h2 { font-size: var(--fs-h2); margin-top: 2.1em; }
+.prose h3 { font-size: var(--fs-h3); margin-top: 1.7em; }
+.prose h4 { font-size: 1.12rem; margin-top: 1.4em; }
+.prose p, .prose ul, .prose ol, .prose blockquote { margin-bottom: 1.3em; }
+.prose ul, .prose ol { padding-left: 1.4em; }
+.prose li { margin-bottom: .5em; }
+.prose a { text-decoration: underline; text-decoration-color: var(--tint-2); text-underline-offset: 2px; }
+.prose a:hover { color: var(--brand-deep); }
+.prose img { border-radius: var(--r); box-shadow: var(--sh-1); margin: 1.6em 0; }
+.prose figure { margin: 1.6em 0; }
+.prose figcaption { font-size: .85rem; color: var(--muted); text-align: center; margin-top: .5em; }
+.prose blockquote { border-left: 3px solid var(--brand); padding-left: 1.2em; font-style: italic; color: var(--ink-soft); }
+.prose hr { border: none; border-top: 1px solid var(--line); margin: 2.2em 0; }
+.prose strong, .prose b { color: var(--ink); }
+.prose > *:last-child { margin-bottom: 0; }
+@media (max-width: 620px) {
+  .card--post .post-thumb { aspect-ratio: 16/11; }
+}
