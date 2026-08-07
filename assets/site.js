@@ -182,4 +182,36 @@
       });
     }
   }
+
+  /* 6. Google Ads conversion tracking for Jane App click-throughs */
+  doc.addEventListener("click", function (e) {
+    var link = e.target.closest('a[href*="janeapp.com"]');
+    if (!link || typeof gtag !== "function") return;
+
+    // Let the browser handle ctrl/cmd/shift/middle-click (opening a new tab/window)
+    // natively -- just track it without hijacking navigation.
+    if (e.button === 1 || e.metaKey || e.ctrlKey || e.shiftKey) {
+      gtag("event", "conversion", { send_to: "AW-10897801558/XkcpCP-g-LEbENaCvcwo" });
+      return;
+    }
+
+    var href = link.href;
+    var openInNewTab = link.target === "_blank";
+    var navigated = false;
+    var goToJane = function () {
+      if (navigated) return;
+      navigated = true;
+      if (openInNewTab) {
+        window.open(href, "_blank", "noopener");
+      } else {
+        window.location.href = href;
+      }
+    };
+    e.preventDefault();
+    gtag("event", "conversion", {
+      send_to: "AW-10897801558/XkcpCP-g-LEbENaCvcwo",
+      event_callback: goToJane
+    });
+    setTimeout(goToJane, 1000);
+  });
 })();
