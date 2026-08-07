@@ -86,7 +86,6 @@
     </div>
 
     <form class="reveal ajax-form" data-delay="1" style="max-width:640px;margin:2.5rem auto 0;" action="https://formspree.io/f/mqpzadqd" method="POST" data-success-message="Thanks — your lab request has been sent. Taking you to the next step…" data-redirect="../youre-set/" id="labs-form">
-      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
       <input type="hidden" name="_subject" value="New lab order request from drariciu.com">
       <input type="hidden" name="estimated_total" id="lab-total-hidden" value="$210.58">
 
@@ -252,17 +251,23 @@
         <div class="form-grid">
           <div class="form-row">
             <div class="field">
-              <label for="lf-name">Name</label>
-              <input type="text" id="lf-name" name="name" required autocomplete="name">
+              <label for="lf-first-name">First Name</label>
+              <input type="text" id="lf-first-name" name="first_name" required autocomplete="given-name">
             </div>
+            <div class="field">
+              <label for="lf-last-name">Last Name</label>
+              <input type="text" id="lf-last-name" name="last_name" required autocomplete="family-name">
+            </div>
+          </div>
+          <div class="form-row">
             <div class="field">
               <label for="lf-email">Email</label>
               <input type="email" id="lf-email" name="email" required autocomplete="email">
             </div>
-          </div>
-          <div class="field">
-            <label for="lf-phone">Phone</label>
-            <input type="tel" id="lf-phone" name="phone" required autocomplete="tel">
+            <div class="field">
+              <label for="lf-phone">Phone</label>
+              <input type="tel" id="lf-phone" name="phone" required autocomplete="tel">
+            </div>
           </div>
           <div class="field">
             <label for="lf-notes">Anything else? <span style="font-weight:400;color:var(--muted);">(optional)</span></label>
