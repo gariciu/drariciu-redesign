@@ -399,6 +399,29 @@ p:last-child { margin-bottom: 0; }
 .lab-row__name { color: var(--ink-soft); }
 .lab-row__price { font-weight: 600; color: var(--ink); flex: none; }
 
+/* lab add-on picker (Order Labs step) */
+.lab-addons { border: 1px solid var(--line); border-radius: var(--r); background: var(--panel); box-shadow: var(--sh-1); overflow: clip; margin-top: 1.5rem; }
+.lab-addons__head { padding: 1.1rem 1.5rem; border-bottom: 1px solid var(--line); }
+.lab-addons__head h3 { font-size: 1.05rem; margin-bottom: .3rem; }
+.lab-addons__head p { font-size: .88rem; color: var(--muted); margin: 0; }
+.lab-search { padding: 1rem 1.5rem; border-bottom: 1px solid var(--line); }
+.lab-search input {
+  width: 100%; font: inherit; font-size: .95rem; color: var(--ink);
+  background: var(--tint-3); border: 1px solid var(--line-2); border-radius: var(--r-sm);
+  padding: .7rem .9rem;
+}
+.lab-search input:focus { outline: none; border-color: var(--brand-bright); box-shadow: var(--ring); }
+label.lab-row--pick { cursor: pointer; }
+label.lab-row--pick:hover { background: var(--tint-3); }
+.lab-row--pick.is-included { cursor: default; }
+.lab-row--pick.is-included:hover { background: transparent; }
+.lab-row__pick { display: flex; align-items: center; gap: .75rem; }
+.lab-row__pick input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--brand); flex: none; }
+.lab-row__price--included { color: var(--muted); font-weight: 700; font-size: .76rem; text-transform: uppercase; letter-spacing: .06em; }
+.lab-total { background: var(--tint-3); padding: 1.15rem 1.5rem; }
+.lab-total__row { display: flex; justify-content: space-between; gap: 1rem; padding: .3rem 0; font-size: .95rem; color: var(--ink-soft); }
+.lab-total__row--grand { font-weight: 700; font-size: 1.1rem; color: var(--ink); border-top: 1px solid var(--line-2); margin-top: .4rem; padding-top: .65rem; }
+
 /* ---------- 10. Steps (what to expect) ---------- */
 .steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem 2rem; counter-reset: step; }
 .step { display: flex; gap: 1rem; align-items: flex-start; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }

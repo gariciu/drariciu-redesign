@@ -93,4 +93,47 @@
       });
     });
   });
+
+  /* 5. Order Labs: running total + add-on search filter */
+  var labsForm = doc.getElementById("labs-form");
+  if (labsForm) {
+    var panelCheckbox = doc.getElementById("lf-panel");
+    var totalEl = doc.getElementById("lab-total-amount");
+    var totalHidden = doc.getElementById("lab-total-hidden");
+    var PANEL_PRICE = 210.58;
+    var recalcTotal = function () {
+      var total = panelCheckbox && panelCheckbox.checked ? PANEL_PRICE : 0;
+      labsForm.querySelectorAll("input[type=checkbox][data-price]:checked").forEach(function (cb) {
+        total += parseFloat(cb.getAttribute("data-price")) || 0;
+      });
+      var formatted = "$" + total.toFixed(2);
+      if (totalEl) totalEl.textContent = formatted;
+      if (totalHidden) totalHidden.value = formatted;
+    };
+    labsForm.addEventListener("change", function (e) {
+      if (e.target.matches("input[type=checkbox]")) recalcTotal();
+    });
+    recalcTotal();
+
+    var labSearch = doc.getElementById("lab-search");
+    if (labSearch) {
+      labSearch.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") e.preventDefault();
+      });
+      labSearch.addEventListener("input", function () {
+        var q = labSearch.value.trim().toLowerCase();
+        labsForm.querySelectorAll(".lab-addons .lab-group").forEach(function (group) {
+          var anyVisible = false;
+          group.querySelectorAll(".lab-row--pick").forEach(function (row) {
+            var nameEl = row.querySelector(".lab-row__name");
+            var name = nameEl ? nameEl.textContent.toLowerCase() : "";
+            var match = !q || name.indexOf(q) !== -1;
+            row.style.display = match ? "" : "none";
+            if (match) anyVisible = true;
+          });
+          group.style.display = anyVisible ? "" : "none";
+        });
+      });
+    }
+  }
 })();

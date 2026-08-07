@@ -85,90 +85,178 @@
       <p class="lede center measure" style="margin-inline:auto;">Ordering ahead means your results are ready to go over together at your visit. This is the panel I run for the vast majority of new patients.</p>
     </div>
 
-    <div class="lab-panel reveal" data-delay="1" style="max-width:640px;margin:2.5rem auto 0;">
-      <div class="lab-panel__summary">
-        <span class="lab-panel__name">Comprehensive Panel</span>
-        <span class="lab-panel__price">$210.58</span>
-      </div>
-      <p class="lab-panel__note">This price covers the panel itself. A separate blood draw fee is paid at the lab when you go in.</p>
-      <details>
-        <summary>See everything that&rsquo;s included
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-        </summary>
+    <form class="reveal ajax-form" data-delay="1" style="max-width:640px;margin:2.5rem auto 0;" action="https://formspree.io/f/mqpzadqd" method="POST" data-success-message="Thanks — your lab request has been sent. I'll get it set up and follow up with you shortly." id="labs-form">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_subject" value="New lab order request from drariciu.com">
+      <input type="hidden" name="estimated_total" id="lab-total-hidden" value="$210.58">
 
-        <div class="lab-group">
-          <div class="lab-group__head">Metabolic &amp; CBC</div>
-          <div class="lab-row"><span class="lab-row__name">CBC (with Differential and Platelets)</span><span class="lab-row__price">$3.35</span></div>
-          <div class="lab-row"><span class="lab-row__name">Comprehensive Metabolic Panel</span><span class="lab-row__price">$7.90</span></div>
-          <div class="lab-row"><span class="lab-row__name">Hemoglobin A1c</span><span class="lab-row__price">$5.00</span></div>
-          <div class="lab-row"><span class="lab-row__name">Insulin</span><span class="lab-row__price">$8.00</span></div>
-          <div class="lab-row"><span class="lab-row__name">Uric Acid</span><span class="lab-row__price">$3.00</span></div>
-          <div class="lab-row"><span class="lab-row__name">Phosphate (as Phosphorus)</span><span class="lab-row__price">$4.00</span></div>
-          <div class="lab-row"><span class="lab-row__name">Gamma Glutamyl Transferase (GGT)</span><span class="lab-row__price">$4.00</span></div>
-          <div class="lab-row"><span class="lab-row__name">Lactate Dehydrogenase (LD)</span><span class="lab-row__price">$7.89</span></div>
+      <div class="lab-panel" style="margin-bottom:1.5rem;">
+        <div class="lab-panel__summary">
+          <span class="lab-panel__name">Comprehensive Panel</span>
+          <span class="lab-panel__price">$210.58</span>
+        </div>
+        <p class="lab-panel__note">This price covers the panel itself. A separate blood draw fee is paid at the lab when you go in.</p>
+        <details>
+          <summary>See everything that&rsquo;s included
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+
+          <div class="lab-group">
+            <div class="lab-group__head">Metabolic &amp; CBC</div>
+            <div class="lab-row"><span class="lab-row__name">CBC (with Differential and Platelets)</span><span class="lab-row__price">$3.35</span></div>
+            <div class="lab-row"><span class="lab-row__name">Comprehensive Metabolic Panel</span><span class="lab-row__price">$7.90</span></div>
+            <div class="lab-row"><span class="lab-row__name">Hemoglobin A1c</span><span class="lab-row__price">$5.00</span></div>
+            <div class="lab-row"><span class="lab-row__name">Insulin</span><span class="lab-row__price">$8.00</span></div>
+            <div class="lab-row"><span class="lab-row__name">Uric Acid</span><span class="lab-row__price">$3.00</span></div>
+            <div class="lab-row"><span class="lab-row__name">Phosphate (as Phosphorus)</span><span class="lab-row__price">$4.00</span></div>
+            <div class="lab-row"><span class="lab-row__name">Gamma Glutamyl Transferase (GGT)</span><span class="lab-row__price">$4.00</span></div>
+            <div class="lab-row"><span class="lab-row__name">Lactate Dehydrogenase (LD)</span><span class="lab-row__price">$7.89</span></div>
+          </div>
+
+          <div class="lab-group">
+            <div class="lab-group__head">Cardiovascular &amp; Inflammation</div>
+            <div class="lab-row"><span class="lab-row__name">Cardio IQ Lipid Panel</span><span class="lab-row__price">$5.00</span></div>
+            <div class="lab-row"><span class="lab-row__name">Homocysteine</span><span class="lab-row__price">$19.44</span></div>
+            <div class="lab-row"><span class="lab-row__name">Lipoprotein (a)</span><span class="lab-row__price">$16.00</span></div>
+            <div class="lab-row"><span class="lab-row__name">Cardio IQ Apolipoprotein B</span><span class="lab-row__price">$18.00</span></div>
+            <div class="lab-row"><span class="lab-row__name">hs-CRP</span><span class="lab-row__price">$11.00</span></div>
+          </div>
+
+          <div class="lab-group">
+            <div class="lab-group__head">Thyroid</div>
+            <div class="lab-row"><span class="lab-row__name">TSH</span><span class="lab-row__price">$6.00</span></div>
+            <div class="lab-row"><span class="lab-row__name">T3, Total</span><span class="lab-row__price">$5.00</span></div>
+            <div class="lab-row"><span class="lab-row__name">T3, Uptake</span><span class="lab-row__price">$2.50</span></div>
+            <div class="lab-row"><span class="lab-row__name">T3, Free</span><span class="lab-row__price">$8.33</span></div>
+            <div class="lab-row"><span class="lab-row__name">T4, Free (FT4)</span><span class="lab-row__price">$6.00</span></div>
+            <div class="lab-row"><span class="lab-row__name">T4 (Thyroxine), Total</span><span class="lab-row__price">$4.86</span></div>
+            <div class="lab-row"><span class="lab-row__name">Thyroglobulin Antibodies</span><span class="lab-row__price">$8.75</span></div>
+            <div class="lab-row"><span class="lab-row__name">Thyroid Peroxidase Antibodies (TPO)</span><span class="lab-row__price">$10.00</span></div>
+          </div>
+
+          <div class="lab-group">
+            <div class="lab-group__head">Iron &amp; Nutrients</div>
+            <div class="lab-row"><span class="lab-row__name">Iron, Total and Total Iron Binding Capacity</span><span class="lab-row__price">$6.88</span></div>
+            <div class="lab-row"><span class="lab-row__name">Ferritin</span><span class="lab-row__price">$7.00</span></div>
+            <div class="lab-row"><span class="lab-row__name">Vitamin D, 25-Hydroxy, Total</span><span class="lab-row__price">$20.00</span></div>
+            <div class="lab-row"><span class="lab-row__name">Magnesium, RBC</span><span class="lab-row__price">$12.68</span></div>
+          </div>
+        </details>
+      </div>
+
+      <div class="lab-addons">
+        <div class="lab-addons__head">
+          <h3>Want to add any specific tests?</h3>
+          <p>Totally optional. Search or browse to add anything extra. Tests already in your panel are marked &ldquo;Included,&rdquo; so nothing gets ordered twice.</p>
+        </div>
+        <div class="lab-search">
+          <input type="text" id="lab-search" placeholder="Search add-on tests (e.g. testosterone, zinc)" autocomplete="off">
         </div>
 
         <div class="lab-group">
-          <div class="lab-group__head">Cardiovascular &amp; Inflammation</div>
-          <div class="lab-row"><span class="lab-row__name">Cardio IQ Lipid Panel</span><span class="lab-row__price">$5.00</span></div>
-          <div class="lab-row"><span class="lab-row__name">Homocysteine</span><span class="lab-row__price">$19.44</span></div>
-          <div class="lab-row"><span class="lab-row__name">Lipoprotein (a)</span><span class="lab-row__price">$16.00</span></div>
-          <div class="lab-row"><span class="lab-row__name">Cardio IQ Apolipoprotein B</span><span class="lab-row__price">$18.00</span></div>
-          <div class="lab-row"><span class="lab-row__name">hs-CRP</span><span class="lab-row__price">$11.00</span></div>
+          <div class="lab-group__head">Hormones</div>
+          <label class="lab-row lab-row--pick"><span class="lab-row__pick"><input type="checkbox" name="addon" value="Testosterone, Free, Bioavailable and Total, MS ($30.00)" data-price="30.00"><span class="lab-row__name">Testosterone, Free, Bioavailable and Total, MS</span></span><span class="lab-row__price">$30.00</span></label>
+          <label class="lab-row lab-row--pick"><span class="lab-row__pick"><input type="checkbox" name="addon" value="Testosterone, Total, MS ($9.50)" data-price="9.50"><span class="lab-row__name">Testosterone, Total, MS</span></span><span class="lab-row__price">$9.50</span></label>
+          <label class="lab-row lab-row--pick"><span class="lab-row__pick"><input type="checkbox" name="addon" value="Dihydrotestosterone ($42.85)" data-price="42.85"><span class="lab-row__name">Dihydrotestosterone</span></span><span class="lab-row__price">$42.85</span></label>
+          <label class="lab-row lab-row--pick"><span class="lab-row__pick"><input type="checkbox" name="addon" value="DHEA Sulfate, Immunoassay ($9.00)" data-price="9.00"><span class="lab-row__name">DHEA Sulfate, Immunoassay</span></span><span class="lab-row__price">$9.00</span></label>
+          <label class="lab-row lab-row--pick"><span class="lab-row__pick"><input type="checkbox" name="addon" value="Estradiol, Ultrasensitive, LC/MS ($23.61)" data-price="23.61"><span class="lab-row__name">Estradiol, Ultrasensitive, LC/MS</span></span><span class="lab-row__price">$23.61</span></label>
+          <label class="lab-row lab-row--pick"><span class="lab-row__pick"><input type="checkbox" name="addon" value="Progesterone, LC/MS ($28.69)" data-price="28.69"><span class="lab-row__name">Progesterone, LC/MS</span></span><span class="lab-row__price">$28.69</span></label>
+          <label class="lab-row lab-row--pick"><span class="lab-row__pick"><input type="checkbox" name="addon" value="FSH and LH ($12.50)" data-price="12.50"><span class="lab-row__name">FSH and LH</span></span><span class="lab-row__price">$12.50</span></label>
+          <label class="lab-row lab-row--pick"><span class="lab-row__pick"><input type="checkbox" name="addon" value="Prolactin ($10.00)" data-price="10.00"><span class="lab-row__name">Prolactin</span></span><span class="lab-row__price">$10.00</span></label>
+        </div>
+
+        <div class="lab-group">
+          <div class="lab-group__head">Heart &amp; Metabolic</div>
+          <label class="lab-row lab-row--pick"><span class="lab-row__pick"><input type="checkbox" name="addon" value="Lipoprotein Fractionation, NMR ($50.00)" data-price="50.00"><span class="lab-row__name">Lipoprotein Fractionation, NMR</span></span><span class="lab-row__price">$50.00</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">CBC (with Differential and Platelets)</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">Comprehensive Metabolic Panel</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">Hemoglobin A1c</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">Insulin</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">Uric Acid</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">Phosphate (as Phosphorus)</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">Gamma Glutamyl Transferase (GGT)</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">Lactate Dehydrogenase (LD)</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">Cardio IQ Lipid Panel</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">Homocysteine</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">Lipoprotein (a)</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">Cardio IQ Apolipoprotein B</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+        </div>
+
+        <div class="lab-group">
+          <div class="lab-group__head">Inflammation &amp; Autoimmune</div>
+          <label class="lab-row lab-row--pick"><span class="lab-row__pick"><input type="checkbox" name="addon" value="Sed Rate by Modified Westergren ($4.89)" data-price="4.89"><span class="lab-row__name">Sed Rate by Modified Westergren</span></span><span class="lab-row__price">$4.89</span></label>
+          <label class="lab-row lab-row--pick"><span class="lab-row__pick"><input type="checkbox" name="addon" value="Rheumatoid Factor ($6.88)" data-price="6.88"><span class="lab-row__name">Rheumatoid Factor</span></span><span class="lab-row__price">$6.88</span></label>
+          <label class="lab-row lab-row--pick"><span class="lab-row__pick"><input type="checkbox" name="addon" value="Celiac Disease Diagnostic Panel ($75.21)" data-price="75.21"><span class="lab-row__name">Celiac Disease Diagnostic Panel</span></span><span class="lab-row__price">$75.21</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">hs-CRP</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+        </div>
+
+        <div class="lab-group">
+          <div class="lab-group__head">Vitamins, Minerals &amp; Anemia</div>
+          <label class="lab-row lab-row--pick"><span class="lab-row__pick"><input type="checkbox" name="addon" value="Intrinsic Factor Blocking Antibody ($20.94)" data-price="20.94"><span class="lab-row__name">Intrinsic Factor Blocking Antibody</span></span><span class="lab-row__price">$20.94</span></label>
+          <label class="lab-row lab-row--pick"><span class="lab-row__pick"><input type="checkbox" name="addon" value="Vitamin B12 (Cobalamin) ($5.56)" data-price="5.56"><span class="lab-row__name">Vitamin B12 (Cobalamin)</span></span><span class="lab-row__price">$5.56</span></label>
+          <label class="lab-row lab-row--pick"><span class="lab-row__pick"><input type="checkbox" name="addon" value="Zinc ($14.88)" data-price="14.88"><span class="lab-row__name">Zinc</span></span><span class="lab-row__price">$14.88</span></label>
+          <label class="lab-row lab-row--pick"><span class="lab-row__pick"><input type="checkbox" name="addon" value="Methylmalonic Acid ($34.72)" data-price="34.72"><span class="lab-row__name">Methylmalonic Acid</span></span><span class="lab-row__price">$34.72</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">Iron, Total and Total Iron Binding Capacity</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">Ferritin</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">Vitamin D, 25-Hydroxy, Total</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">Magnesium, RBC</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+        </div>
+
+        <div class="lab-group">
+          <div class="lab-group__head">Screening &amp; Other</div>
+          <label class="lab-row lab-row--pick"><span class="lab-row__pick"><input type="checkbox" name="addon" value="Alpha-Gal Panel ($45.24)" data-price="45.24"><span class="lab-row__name">Alpha-Gal Panel</span></span><span class="lab-row__price">$45.24</span></label>
+          <label class="lab-row lab-row--pick"><span class="lab-row__pick"><input type="checkbox" name="addon" value="PSA, Free and Total ($10.00)" data-price="10.00"><span class="lab-row__name">PSA, Free and Total</span></span><span class="lab-row__price">$10.00</span></label>
+          <label class="lab-row lab-row--pick"><span class="lab-row__pick"><input type="checkbox" name="addon" value="Lyme Disease Antibodies (IgG, IgM), Immunoblot ($41.08)" data-price="41.08"><span class="lab-row__name">Lyme Disease Antibodies (IgG, IgM), Immunoblot</span></span><span class="lab-row__price">$41.08</span></label>
+          <label class="lab-row lab-row--pick"><span class="lab-row__pick"><input type="checkbox" name="addon" value="Epstein-Barr Virus Early Antigen D Antibody (IgG) ($43.36)" data-price="43.36"><span class="lab-row__name">Epstein-Barr Virus Early Antigen D Antibody (IgG)</span></span><span class="lab-row__price">$43.36</span></label>
         </div>
 
         <div class="lab-group">
           <div class="lab-group__head">Thyroid</div>
-          <div class="lab-row"><span class="lab-row__name">TSH</span><span class="lab-row__price">$6.00</span></div>
-          <div class="lab-row"><span class="lab-row__name">T3, Total</span><span class="lab-row__price">$5.00</span></div>
-          <div class="lab-row"><span class="lab-row__name">T3, Uptake</span><span class="lab-row__price">$2.50</span></div>
-          <div class="lab-row"><span class="lab-row__name">T3, Free</span><span class="lab-row__price">$8.33</span></div>
-          <div class="lab-row"><span class="lab-row__name">T4, Free (FT4)</span><span class="lab-row__price">$6.00</span></div>
-          <div class="lab-row"><span class="lab-row__name">T4 (Thyroxine), Total</span><span class="lab-row__price">$4.86</span></div>
-          <div class="lab-row"><span class="lab-row__name">Thyroglobulin Antibodies</span><span class="lab-row__price">$8.75</span></div>
-          <div class="lab-row"><span class="lab-row__name">Thyroid Peroxidase Antibodies (TPO)</span><span class="lab-row__price">$10.00</span></div>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">TSH</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">T3, Total</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">T3, Uptake</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">T3, Free</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">T4, Free (FT4)</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">T4 (Thyroxine), Total</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">Thyroglobulin Antibodies</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
+          <label class="lab-row lab-row--pick is-included"><span class="lab-row__pick"><input type="checkbox" checked disabled><span class="lab-row__name">Thyroid Peroxidase Antibodies (TPO)</span></span><span class="lab-row__price lab-row__price--included">Included</span></label>
         </div>
 
-        <div class="lab-group">
-          <div class="lab-group__head">Iron &amp; Nutrients</div>
-          <div class="lab-row"><span class="lab-row__name">Iron, Total and Total Iron Binding Capacity</span><span class="lab-row__price">$6.88</span></div>
-          <div class="lab-row"><span class="lab-row__name">Ferritin</span><span class="lab-row__price">$7.00</span></div>
-          <div class="lab-row"><span class="lab-row__name">Vitamin D, 25-Hydroxy, Total</span><span class="lab-row__price">$20.00</span></div>
-          <div class="lab-row"><span class="lab-row__name">Magnesium, RBC</span><span class="lab-row__price">$12.68</span></div>
+        <div class="lab-total">
+          <div class="lab-total__row lab-total__row--grand"><span>Estimated Total</span><span id="lab-total-amount">$210.58</span></div>
+          <p class="lab-panel__note" style="border:none;padding:.5rem 0 0;margin:0;">Each add-on&rsquo;s listed price is the base cost. A separate blood draw fee is paid at your appointment.</p>
         </div>
-      </details>
-    </div>
+      </div>
 
-    <form class="card reveal ajax-form" data-delay="2" style="max-width:640px;margin:2rem auto 0;" action="https://formspree.io/f/mqpzadqd" method="POST" data-success-message="Thanks — your lab request has been sent. I'll get it set up and follow up with you shortly." id="labs-form">
-      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-      <input type="hidden" name="_subject" value="New lab order request from drariciu.com">
-      <div class="form-grid">
-        <div class="form-row">
-          <div class="field">
-            <label for="lf-name">Name</label>
-            <input type="text" id="lf-name" name="name" required autocomplete="name">
+      <div class="card" style="max-width:640px;margin:2rem auto 0;">
+        <div class="form-grid">
+          <div class="form-row">
+            <div class="field">
+              <label for="lf-name">Name</label>
+              <input type="text" id="lf-name" name="name" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="lf-email">Email</label>
+              <input type="email" id="lf-email" name="email" required autocomplete="email">
+            </div>
           </div>
           <div class="field">
-            <label for="lf-email">Email</label>
-            <input type="email" id="lf-email" name="email" required autocomplete="email">
+            <label for="lf-phone">Phone</label>
+            <input type="tel" id="lf-phone" name="phone" required autocomplete="tel">
           </div>
+          <div class="field field--checkbox">
+            <input type="checkbox" id="lf-panel" name="comprehensive_panel" value="Yes — include the Comprehensive Panel" checked>
+            <label for="lf-panel">Include the Comprehensive Panel ($210.58)</label>
+          </div>
+          <div class="field">
+            <label for="lf-notes">Anything else? <span style="font-weight:400;color:var(--muted);">(optional)</span></label>
+            <textarea id="lf-notes" name="notes" placeholder="Timing questions, anything not listed above, etc."></textarea>
+          </div>
+          <button class="btn btn--primary btn--lg" type="submit">Send My Lab Request
+            <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <p class="form-status" role="status" aria-live="polite"></p>
         </div>
-        <div class="field">
-          <label for="lf-phone">Phone</label>
-          <input type="tel" id="lf-phone" name="phone" required autocomplete="tel">
-        </div>
-        <div class="field field--checkbox">
-          <input type="checkbox" id="lf-panel" name="comprehensive_panel" value="Yes — include the Comprehensive Panel" checked>
-          <label for="lf-panel">Include the Comprehensive Panel ($210.58)</label>
-        </div>
-        <div class="field">
-          <label for="lf-notes">Anything else? <span style="font-weight:400;color:var(--muted);">(optional)</span></label>
-          <textarea id="lf-notes" name="notes" placeholder="Specific tests you'd like to ask about, timing questions, etc."></textarea>
-        </div>
-        <button class="btn btn--primary btn--lg" type="submit">Send My Lab Request
-          <svg class="btn__arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </button>
-        <p class="form-status" role="status" aria-live="polite"></p>
       </div>
     </form>
 
