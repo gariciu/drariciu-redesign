@@ -132,6 +132,9 @@
             if (match) anyVisible = true;
           });
           group.style.display = anyVisible ? "" : "none";
+          if (typeof group.open !== "undefined") {
+            group.open = q ? anyVisible : false;
+          }
         });
       });
     }
