@@ -60,6 +60,7 @@
     var status = form.querySelector(".form-status");
     var successMsg = form.getAttribute("data-success-message")
       || "Thanks — your message has been sent. I'll get back to you soon.";
+    var redirectTo = form.getAttribute("data-redirect");
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var btn = form.querySelector("button[type=submit]");
@@ -75,6 +76,9 @@
           if (status) {
             status.textContent = successMsg;
             status.className = "form-status form-status--ok";
+          }
+          if (redirectTo) {
+            setTimeout(function () { window.location.href = redirectTo; }, 900);
           }
         } else {
           return res.json().then(function (data) {
@@ -97,15 +101,32 @@
   /* 5. Order Labs: running total + add-on search filter */
   var labsForm = doc.getElementById("labs-form");
   if (labsForm) {
-    var panelCheckbox = doc.getElementById("lf-panel");
     var totalEl = doc.getElementById("lab-total-amount");
     var totalHidden = doc.getElementById("lab-total-hidden");
+    var addonsBox = doc.getElementById("lab-total-addons");
     var PANEL_PRICE = 210.58;
     var recalcTotal = function () {
-      var total = panelCheckbox && panelCheckbox.checked ? PANEL_PRICE : 0;
+      var addonsTotal = 0;
+      var rowsHtml = "";
       labsForm.querySelectorAll("input[type=checkbox][data-price]:checked").forEach(function (cb) {
-        total += parseFloat(cb.getAttribute("data-price")) || 0;
+        var price = parseFloat(cb.getAttribute("data-price")) || 0;
+        addonsTotal += price;
+        var rowEl = cb.closest(".lab-row--pick");
+        var nameEl = rowEl ? rowEl.querySelector(".lab-row__name") : null;
+        var name = nameEl ? nameEl.textContent : "Add-on";
+        rowsHtml += '<div class="lab-total__row"><span>' + name + "</span><span>$" + price.toFixed(2) + "</span></div>";
       });
+      if (addonsBox) {
+        if (addonsTotal > 0) {
+          rowsHtml += '<div class="lab-total__row lab-total__row--subtotal"><span>Add-ons Subtotal</span><span>$' + addonsTotal.toFixed(2) + "</span></div>";
+          addonsBox.innerHTML = rowsHtml;
+          addonsBox.hidden = false;
+        } else {
+          addonsBox.innerHTML = "";
+          addonsBox.hidden = true;
+        }
+      }
+      var total = PANEL_PRICE + addonsTotal;
       var formatted = "$" + total.toFixed(2);
       if (totalEl) totalEl.textContent = formatted;
       if (totalHidden) totalHidden.value = formatted;

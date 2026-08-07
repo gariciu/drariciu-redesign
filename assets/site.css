@@ -459,6 +459,9 @@ label.lab-row--pick:hover { background: var(--tint-3); }
 .lab-total { background: var(--tint-3); padding: 1.15rem 1.5rem; }
 .lab-total__row { display: flex; justify-content: space-between; gap: 1rem; padding: .3rem 0; font-size: .95rem; color: var(--ink-soft); }
 .lab-total__row--grand { font-weight: 700; font-size: 1.1rem; color: var(--ink); border-top: 1px solid var(--line-2); margin-top: .4rem; padding-top: .65rem; }
+.lab-total__addons { margin-top: .2rem; }
+.lab-total__addons .lab-total__row { color: var(--muted); font-size: .88rem; padding: .2rem 0; }
+.lab-total__row--subtotal { font-weight: 700; color: var(--ink-soft) !important; border-top: 1px dashed var(--line-2); margin-top: .3rem; padding-top: .5rem !important; }
 
 .privacy-note {
   display: flex; align-items: flex-start; gap: .85rem;
