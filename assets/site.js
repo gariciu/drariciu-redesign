@@ -115,6 +115,26 @@
     });
     recalcTotal();
 
+    /* Category tab slider */
+    var tabs = labsForm.querySelectorAll(".lab-tab");
+    var tabpanels = labsForm.querySelectorAll(".lab-tabpanel");
+    var tabpanelsWrap = labsForm.querySelector(".lab-tabpanels");
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        if (tabpanelsWrap && tabpanelsWrap.classList.contains("is-searching")) return;
+        tabs.forEach(function (t) {
+          t.classList.remove("is-active");
+          t.setAttribute("aria-selected", "false");
+        });
+        tab.classList.add("is-active");
+        tab.setAttribute("aria-selected", "true");
+        var target = tab.getAttribute("data-panel");
+        tabpanels.forEach(function (panel) {
+          panel.classList.toggle("is-active", panel.getAttribute("data-panel") === target);
+        });
+      });
+    });
+
     var labSearch = doc.getElementById("lab-search");
     if (labSearch) {
       labSearch.addEventListener("keydown", function (e) {
@@ -122,18 +142,20 @@
       });
       labSearch.addEventListener("input", function () {
         var q = labSearch.value.trim().toLowerCase();
-        labsForm.querySelectorAll(".lab-addons .lab-group").forEach(function (group) {
+        if (tabpanelsWrap) tabpanelsWrap.classList.toggle("is-searching", !!q);
+        tabpanels.forEach(function (panel) {
           var anyVisible = false;
-          group.querySelectorAll(".lab-row--pick").forEach(function (row) {
+          panel.querySelectorAll(".lab-row--pick").forEach(function (row) {
             var nameEl = row.querySelector(".lab-row__name");
             var name = nameEl ? nameEl.textContent.toLowerCase() : "";
             var match = !q || name.indexOf(q) !== -1;
             row.style.display = match ? "" : "none";
             if (match) anyVisible = true;
           });
-          group.style.display = anyVisible ? "" : "none";
-          if (typeof group.open !== "undefined") {
-            group.open = q ? anyVisible : false;
+          if (q) {
+            panel.classList.toggle("is-searching-visible", anyVisible);
+          } else {
+            panel.classList.remove("is-searching-visible");
           }
         });
       });
