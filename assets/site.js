@@ -63,6 +63,14 @@
     var redirectTo = form.getAttribute("data-redirect");
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+      var recaptchaBox = form.querySelector(".g-recaptcha");
+      if (recaptchaBox && (typeof grecaptcha === "undefined" || !grecaptcha.getResponse())) {
+        if (status) {
+          status.textContent = "Please check the “I'm not a robot” box before sending.";
+          status.className = "form-status form-status--err";
+        }
+        return;
+      }
       var btn = form.querySelector("button[type=submit]");
       btn.disabled = true;
       if (status) { status.textContent = "Sending…"; status.className = "form-status"; }
