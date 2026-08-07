@@ -360,7 +360,44 @@ p:last-child { margin-bottom: 0; }
 .form-status { font-size: .92rem; font-weight: 600; margin: 0; min-height: 1.3em; }
 .form-status--ok { color: #157a3d; }
 .form-status--err { color: #b3261e; }
+.field--checkbox { flex-direction: row; align-items: flex-start; gap: .7rem; }
+.field--checkbox input[type="checkbox"] { width: 20px; height: 20px; margin-top: .15rem; accent-color: var(--brand); flex: none; }
+.field--checkbox label { font-weight: 600; color: var(--ink); }
 @media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } }
+
+/* start-flow stepper */
+.stepper { display: flex; align-items: flex-start; justify-content: center; gap: 0; margin: 0 0 clamp(2rem,4vw,3rem); }
+.stepper__step { display: flex; flex-direction: column; align-items: center; gap: .55rem; width: 92px; flex: none; }
+.stepper__circle {
+  width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+  font-family: var(--serif); font-weight: 600; font-size: 1.05rem;
+  background: var(--panel); border: 2px solid var(--line-2); color: var(--muted);
+  transition: all .25s var(--ease);
+}
+.stepper__label { font-size: .8rem; font-weight: 600; color: var(--muted); text-align: center; }
+.stepper__step.is-done .stepper__circle { background: var(--brand); border-color: var(--brand); color: #fff; }
+.stepper__step.is-done .stepper__label { color: var(--ink); }
+.stepper__step.is-active .stepper__circle { border-color: var(--brand); color: var(--brand); box-shadow: 0 0 0 4px var(--tint); }
+.stepper__step.is-active .stepper__label { color: var(--ink); }
+.stepper__line { flex: 1; height: 2px; background: var(--line-2); margin-top: 20px; min-width: 24px; }
+.stepper__line.is-done { background: var(--brand); }
+
+/* lab panel (Order Labs step) */
+.lab-panel { border: 1px solid var(--line); border-radius: var(--r); background: var(--panel); box-shadow: var(--sh-1); overflow: clip; }
+.lab-panel__summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem 1.5rem; background: var(--tint); flex-wrap: wrap; }
+.lab-panel__name { font-family: var(--serif); font-size: 1.15rem; font-weight: 600; color: var(--ink); }
+.lab-panel__price { font-family: var(--serif); font-size: 1.4rem; font-weight: 600; color: var(--brand-deep); }
+.lab-panel__note { padding: .85rem 1.5rem; font-size: .86rem; color: var(--muted); border-bottom: 1px solid var(--line); }
+.lab-panel details summary { cursor: pointer; padding: 1rem 1.5rem; font-weight: 600; color: var(--brand); font-size: .92rem; list-style: none; display: flex; align-items: center; gap: .4rem; }
+.lab-panel details summary::-webkit-details-marker { display: none; }
+.lab-panel details summary svg { transition: transform .2s var(--ease); }
+.lab-panel details[open] summary svg { transform: rotate(180deg); }
+.lab-group { border-top: 1px solid var(--line); }
+.lab-group__head { padding: .7rem 1.5rem; font-size: .76rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--brand); background: var(--tint-3); }
+.lab-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .65rem 1.5rem; font-size: .93rem; border-top: 1px solid var(--line); }
+.lab-row:first-of-type { border-top: none; }
+.lab-row__name { color: var(--ink-soft); }
+.lab-row__price { font-weight: 600; color: var(--ink); flex: none; }
 
 /* ---------- 10. Steps (what to expect) ---------- */
 .steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem 2rem; counter-reset: step; }

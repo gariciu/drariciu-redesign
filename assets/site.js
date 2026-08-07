@@ -54,10 +54,12 @@
     });
   }
 
-  /* 4. Contact form (Formspree AJAX submit, falls back to normal POST) */
-  var form = doc.getElementById("contact-form");
-  if (form) {
-    var status = doc.getElementById("cf-status");
+  /* 4. Formspree AJAX submit for any .ajax-form, falls back to normal POST */
+  var ajaxForms = doc.querySelectorAll(".ajax-form");
+  ajaxForms.forEach(function (form) {
+    var status = form.querySelector(".form-status");
+    var successMsg = form.getAttribute("data-success-message")
+      || "Thanks — your message has been sent. I'll get back to you soon.";
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var btn = form.querySelector("button[type=submit]");
@@ -71,7 +73,7 @@
         if (res.ok) {
           form.reset();
           if (status) {
-            status.textContent = "Thanks — your message has been sent. I'll get back to you soon.";
+            status.textContent = successMsg;
             status.className = "form-status form-status--ok";
           }
         } else {
@@ -90,5 +92,5 @@
         btn.disabled = false;
       });
     });
-  }
+  });
 })();
