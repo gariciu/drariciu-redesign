@@ -53,4 +53,42 @@
       if (e.key === "Escape") setOpen(false);
     });
   }
+
+  /* 4. Contact form (Formspree AJAX submit, falls back to normal POST) */
+  var form = doc.getElementById("contact-form");
+  if (form) {
+    var status = doc.getElementById("cf-status");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var btn = form.querySelector("button[type=submit]");
+      btn.disabled = true;
+      if (status) { status.textContent = "Sending…"; status.className = "form-status"; }
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+      }).then(function (res) {
+        if (res.ok) {
+          form.reset();
+          if (status) {
+            status.textContent = "Thanks — your message has been sent. I'll get back to you soon.";
+            status.className = "form-status form-status--ok";
+          }
+        } else {
+          return res.json().then(function (data) {
+            var msg = (data && data.errors && data.errors.map(function (x) { return x.message; }).join(", "))
+              || "Something went wrong. Please try emailing doc@drariciu.com directly.";
+            if (status) { status.textContent = msg; status.className = "form-status form-status--err"; }
+          });
+        }
+      }).catch(function () {
+        if (status) {
+          status.textContent = "Something went wrong. Please try emailing doc@drariciu.com directly.";
+          status.className = "form-status form-status--err";
+        }
+      }).finally(function () {
+        btn.disabled = false;
+      });
+    });
+  }
 })();
