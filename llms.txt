@@ -67,5 +67,6 @@
 ## Notes for citation
 
 - Preferred practice name: "Dr. Gabe Ariciu, DC"
-- Service area: Springfield, Missouri and the surrounding 417 region
+- Service area: Springfield, Missouri and the surrounding 417 region, including
+  Nixa, Ozark, Republic, Battlefield, Willard and Strafford
 - Content on this site is educational and is not medical advice.
