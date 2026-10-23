@@ -554,6 +554,7 @@ label.lab-row--pick:hover { background: var(--tint-3); }
 .faq__body { padding: 0 1.4rem 1.35rem; color: var(--ink-soft); }
 .faq__body p { max-width: 68ch; }
 .faq__body ul { max-width: 68ch; margin: .75rem 0 0; padding-left: 1.2em; }
+.faq__body ul + p { margin-top: .85rem; }
 .faq__body li { margin-bottom: .4rem; }
 .faq__body li:last-child { margin-bottom: 0; }
 @media (prefers-reduced-motion: no-preference) {
