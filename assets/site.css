@@ -323,6 +323,7 @@ p:last-child { margin-bottom: 0; }
 .card:hover { transform: translateY(-5px); box-shadow: var(--sh-3); border-color: var(--tint-2); }
 .card__title { font-size: var(--fs-h3); margin-bottom: .5rem; }
 .card__body { color: var(--ink-soft); overflow-wrap: anywhere; }
+.card__detail { display: block; font-weight: 600; color: var(--brand); font-size: 1.06rem; margin-bottom: .4rem; }
 .card__ic {
   width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 1.1rem;
   background: linear-gradient(140deg, var(--tint), var(--tint-2)); color: var(--brand);
