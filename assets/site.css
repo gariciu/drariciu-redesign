@@ -527,10 +527,12 @@ label.lab-row--pick:hover { background: var(--tint-3); }
 .stat__lbl { font-size: .85rem; color: var(--muted); font-weight: 500; margin-top: .35rem; max-width: 16ch; }
 
 /* ---------- 12. Reviews ---------- */
-.reviews { display: grid; grid-template-columns: repeat(3,1fr); gap: var(--gap); align-items: start; }
+/* packed columns: one long review no longer stretches its neighbours into empty boxes */
+.reviews { columns: 3; column-gap: var(--gap); }
 .review {
   background: var(--panel); border: 1px solid var(--line); border-radius: var(--r);
-  padding: 1.6rem; box-shadow: var(--sh-1); height: 100%;
+  padding: 1.6rem; box-shadow: var(--sh-1);
+  display: inline-block; width: 100%; margin: 0 0 var(--gap); break-inside: avoid;
   transition: transform .3s var(--ease), box-shadow .3s var(--ease);
 }
 .review:hover { transform: translateY(-4px); box-shadow: var(--sh-2); }
@@ -667,11 +669,14 @@ label.lab-row--pick:hover { background: var(--tint-3); }
   .split--media-right .split__media { order: -1; }
   .split__media img { aspect-ratio: 16/10; max-height: 420px; }
   .grid--3 { grid-template-columns: repeat(2,1fr); }
-  .reviews { grid-template-columns: 1fr 1fr; }
+  .reviews { columns: 2; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 620px) {
-  .grid--2, .grid--3, .reviews, .steps { grid-template-columns: 1fr; }
+  .grid--2, .grid--3, .steps { grid-template-columns: 1fr; }
+  .reviews { columns: 1; }
+  /* long button labels wrap on phones instead of running off the screen */
+  main .btn { white-space: normal; text-align: center; line-height: 1.25; max-width: 100%; }
   .footer-grid { grid-template-columns: 1fr; }
   .hero__badge { left: 12px; }
   .post-link { flex-direction: row; }
@@ -698,7 +703,7 @@ label.lab-row--pick:hover { background: var(--tint-3); }
 .prose p, .prose ul, .prose ol, .prose blockquote { margin-bottom: 1.3em; }
 .prose ul, .prose ol { padding-left: 1.4em; }
 .prose li { margin-bottom: .5em; }
-.prose a { text-decoration: underline; text-decoration-color: var(--tint-2); text-underline-offset: 2px; }
+.prose a { text-decoration: underline; text-decoration-color: var(--tint-2); text-underline-offset: 2px; overflow-wrap: anywhere; }
 .prose a:hover { color: var(--brand-deep); }
 .prose img { border-radius: var(--r); box-shadow: var(--sh-1); margin: 1.6em 0; }
 .prose figure { margin: 1.6em 0; }
