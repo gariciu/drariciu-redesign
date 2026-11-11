@@ -326,8 +326,6 @@ p:last-child { margin-bottom: 0; }
 .card__detail { display: block; font-weight: 600; color: var(--brand); font-size: 1.06rem; margin-bottom: .4rem; }
 
 /* ---------- Newsletter ---------- */
-.newsletter-embed { max-width: 566px; margin-inline: auto; }
-.newsletter-embed iframe { display: block; width: 100%; height: 919px; border: 0; border-radius: var(--r); background: var(--panel); }
 .newsletter-cta {
   background: var(--tint); border: 1px solid var(--tint-2); border-radius: var(--r);
   padding: clamp(1.4rem, 3vw, 2rem); margin: 2.5rem auto 0; max-width: 68ch;
