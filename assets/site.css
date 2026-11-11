@@ -355,6 +355,29 @@ p:last-child { margin-bottom: 0; }
   background: linear-gradient(140deg, var(--brand-bright), var(--brand)); box-shadow: 0 0 0 4px var(--tint); }
 .focus-item .lbl { font-weight: 600; color: var(--ink); font-size: .98rem; line-height: 1.3; }
 
+/* root-cause map — replaces the old hormone diagram image with real text */
+.rootmap { max-width: 760px; margin: 0 auto 3rem; text-align: center; }
+.rootmap__cap {
+  font-size: .76rem; letter-spacing: .14em; text-transform: uppercase;
+  font-weight: 700; color: var(--muted); margin: 0 0 1.1rem;
+}
+.rootmap__drivers {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem;
+}
+.rootmap__drivers li {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 999px;
+  padding: .62rem 1.15rem; font-weight: 600; font-size: .95rem;
+  color: var(--ink); box-shadow: var(--sh-1);
+}
+.rootmap__arrow { display: block; margin: 1.15rem auto .95rem; color: var(--brand); opacity: .5; }
+.rootmap__target {
+  display: inline-block; margin: 0;
+  background: linear-gradient(140deg, var(--brand), var(--brand-deep)); color: #fff;
+  font-family: var(--serif); font-weight: 600; font-size: clamp(1.15rem,2.4vw,1.5rem);
+  padding: .8rem 1.9rem; border-radius: var(--r-lg); box-shadow: var(--sh-2);
+}
+
 /* contact form */
 .form-grid { display: grid; gap: 1.15rem; }
 .form-row { display: grid; gap: 1.15rem; grid-template-columns: 1fr 1fr; }
