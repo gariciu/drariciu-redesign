@@ -15,7 +15,9 @@
           io.unobserve(e.target);
         }
       });
-    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.08 });
+    }, { rootMargin: "0px 0px -10% 0px", threshold: 0 });
+    // threshold stays 0: a percentage threshold can never be met by an element
+    // taller than the viewport, which left long articles invisible on phones.
     reveals.forEach(function (el) { io.observe(el); });
   } else {
     reveals.forEach(function (el) { el.classList.add("in-view"); });
