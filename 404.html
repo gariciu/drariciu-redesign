@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Page Not Found | Dr. Gabe Ariciu, DC</title>
 <meta name="robots" content="noindex">
+<script>
+  // Old flat URLs (/about.html etc.) are no longer files, so GitHub Pages
+  // answers them here with a 404, which is right for crawlers. Real visitors
+  // on an old link or ad are sent to the page, keeping ?gclid= and #hash.
+  (function () {
+    var m = location.pathname.match(/^\/(about|contact|faq|services|health-topics|systems-health-care|417-local-resources|functional-blood-work-analysis|specialty-lab-testing|innovative-approach-(?:hormones|sibo|thyroid))\.html$/);
+    if (m) location.replace("/" + m[1] + "/" + location.search + location.hash);
+  })();
+</script>
 <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/images/favicon-32x32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
