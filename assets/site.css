@@ -251,6 +251,8 @@ p:last-child { margin-bottom: 0; }
 .hero__sub { font-size: var(--fs-lede); color: var(--ink-soft); max-width: 46ch; margin-bottom: 2rem; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: .85rem; align-items: center; }
 .hero__note { margin-top: 1.6rem; font-size: .9rem; color: var(--muted); display: flex; align-items: center; gap: .5rem; }
+/* second line under the address, lined up with the address text (18px pin + gap) */
+.hero__note--areas { display: block; margin-top: .35rem; padding-left: calc(18px + .5rem); }
 
 /* condition tag row */
 .tag-row { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1.6rem; }
@@ -631,7 +633,7 @@ label.lab-row--pick:hover { background: var(--tint-3); }
   .hero__stagger > * { opacity: 0; transform: translateY(16px); animation: rise .8s var(--ease) forwards; }
   .hero__stagger > *:nth-child(1){ animation-delay:.05s } .hero__stagger > *:nth-child(2){ animation-delay:.15s }
   .hero__stagger > *:nth-child(3){ animation-delay:.25s } .hero__stagger > *:nth-child(4){ animation-delay:.35s }
-  .hero__stagger > *:nth-child(5){ animation-delay:.45s }
+  .hero__stagger > *:nth-child(5){ animation-delay:.45s } .hero__stagger > *:nth-child(6){ animation-delay:.55s }
   .hero__media { opacity: 0; transform: translateY(20px) scale(.98); animation: rise .9s var(--ease) .3s forwards; }
   @keyframes rise { to { opacity: 1; transform: none; } }
 }
